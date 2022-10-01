@@ -16,22 +16,11 @@
     <link rel="stylesheet" href="{% static 'css/responsive.css' %}" />
     <link rel="stylesheet" href="{% static 'css/mainPage.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/mainPage.css' %}" />
+    
   </head>
-  <body>
-     <!--Start of Tawk.to Script-->
-    <script type="text/javascript">
-      var Tawk_API = Tawk_API || {},
-        Tawk_LoadStart = new Date();
-      (function () {
-        var s1 = document.createElement("script"),
-          s0 = document.getElementsByTagName("script")[0];
-        s1.async = true;
-        s1.src = "https://embed.tawk.to/633424d254f06e12d8974e22/1ge1qvmeg";
-        s1.charset = "UTF-8";
-        s1.setAttribute("crossorigin", "*");
-        s0.parentNode.insertBefore(s1, s0);
-      })();
-    </script>
+  <body >
+    <!--Start of Tawk.to Script-->
+    
     <!--End of Tawk.to Script-->
     <!--<div class="se-pre-con"></div>-->
     <div class="theme-layout"></div>
@@ -48,7 +37,10 @@
             style="background-color: #212529; padding: 10px"
           >
             <span style="color: white; margin-right: 520px"
-              ><button class="design radius_padding followInfo">
+              ><button
+                class="design radius_padding followInfo"
+                style="font-size: 1rem"
+              >
                 <a href="/">Home</a>
               </button></span
             >
@@ -58,7 +50,7 @@
               style="background-color: #212529; color: white"
               disabled
             >
-              <span>No Post</span>
+              <span style="font-size: 1.5rem">No Post</span>
             </button>
             {% elif user_post_length == 1 %}
             <button
@@ -66,7 +58,7 @@
               style="background-color: #212529; color: white"
               disabled
             >
-              <span>{{user_post_length}} Post</span>
+              <span style="font-size: 1.5rem">{{user_post_length}} Post</span>
             </button>
             {% else %}
             <button
@@ -74,7 +66,7 @@
               style="background-color: #212529; color: white"
               disabled
             >
-              <span>{{user_post_length}} Posts</span>
+              <span style="font-size: 1.5rem">{{user_post_length}} Posts</span>
             </button>
             {% endif %} {% if user_followers == 0 or user_followers == 1 %}
             <button
@@ -82,7 +74,7 @@
               style="background-color: #212529; color: white"
               disabled
             >
-              <span>{{user_followers}} follower</span>
+              <span style="font-size: 1.5rem">{{user_followers}} follower</span>
             </button>
             {% else %}
             <button
@@ -90,7 +82,9 @@
               style="background-color: #212529; color: white"
               disabled
             >
-              <span>{{user_followers}} followers</span>
+              <span style="font-size: 1.5rem"
+                >{{user_followers}} followers</span
+              >
             </button>
             {% endif %}
             <button
@@ -98,7 +92,9 @@
               style="background-color: #212529; color: white"
               disabled
             >
-              <span>{{user_following}} following</span>
+              <span style="font-size: 1.5rem"
+                >{{user_following}} following</span
+              >
             </button>
             <input type="hidden" value="{{user.username}}" name="follower" />
             <input type="hidden" value="{{user_object.username}}" name="user" />
@@ -135,37 +131,43 @@
 					<input type="file"/>
 					</label>
 				</form> -->
-        <div class="container-fluid" style="background:linear-gradient(to right, #99ccff 0%, #ffcccc 100%) repeat;">
+        <div
+          class="container-fluid"
+          style="
+            background: linear-gradient(to right, #99ccff 0%, #ffcccc 100%)
+              repeat;
+          "
+        >
           <div class="row merged">
             <div class="col-lg-2 col-sm-3">
-              <div class="user-avatar">
+              <div class="user-avatar" >
                 <figure>
                   <img
                     src="{{user_profile.profileimg.url}}"
-                    style="height: 180px; width: 180px; border-radius: 50%"
+                    style="height: 180px; width: 180px; border-radius: 50%;border:3px solid white;"
                     alt=""
                   />
                 </figure>
               </div>
             </div>
-            <div class="col-lg-10 col-sm-9" style="margin-left: 40px;">
-                <ul style="list-style-type: none;">
-                  <li class="admin-name">
-                    <h5
-                      style="
-                        color: black;
-                        white-space: nowrap;
-                        width: 110px;
-                        font-size: 27px;
-                      "
-                    >
-                      <b>{{user_profile.user.username}}</b
-                      ><!--<i class="fa fa-check-circle" style="color: #48dbfb;" aria-hidden="true"></i>-->
-                    </h5>
-                    <!--<span>Group Admin</span>-->
-                  </li>
-                  <li style="color:black ;"><b>{{user_profile.bio}}</b></li>
-                  <!--<li>
+            <div class="col-lg-10 col-sm-9" style="margin-left: 40px">
+              <ul style="list-style-type: none">
+                <li class="admin-name">
+                  <h5
+                    style="
+                      color: black;
+                      white-space: nowrap;
+                      width: 110px;
+                      font-size: 27px;
+                    "
+                  >
+                    <b>{{user_profile.user.username}}</b
+                    ><!--<i class="fa fa-check-circle" style="color: #48dbfb;" aria-hidden="true"></i>-->
+                  </h5>
+                  <!--<span>Group Admin</span>-->
+                </li>
+                <li style="color: black"><b>{{user_profile.bio}}</b></li>
+                <!--<li>
 										<a class="" href="javascript:void(0)" title="" data-ripple="">Go live!</a>
 										<a class="" href="javascript:void(0)" title="" data-ripple="">Music</a>
 										<a class="" href="emporium/index-3.html" title="" data-ripple="">Emporium</a>
@@ -181,8 +183,7 @@
 										<a class="" href="#" title="" data-ripple="">more</a>
 
 									</li>-->
-                </ul>
-              </div>
+              </ul>
             </div>
           </div>
         </div>
@@ -191,7 +192,7 @@
     <!-- top area -->
     <section>
       <div
-        class="gap gray-bg"
+        class="gap gray-white"
         style="
           background: linear-gradient(to right, #99ccff 0%, #ffcccc 100%) repeat;
         "
@@ -219,7 +220,7 @@
                         >
                           <img
                             src="{{post.image.url}}"
-                            style="height: 180px; width: 180px"
+                            style="height: 220px; width: 220px"
                             alt=""
                         /></a>
                       </li>
@@ -240,6 +241,19 @@
         </div>
       </div>
     </section>
+    <script type="text/javascript">
+      var Tawk_API = Tawk_API || {},
+        Tawk_LoadStart = new Date();
+      (function () {
+        var s1 = document.createElement("script"),
+          s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = "https://embed.tawk.to/633424d254f06e12d8974e22/1ge1qvmeg";
+        s1.charset = "UTF-8";
+        s1.setAttribute("crossorigin", "*");
+        s0.parentNode.insertBefore(s1, s0);
+      })();
+    </script>
 
     <script
       data-cfasync="false"

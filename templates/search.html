@@ -11,7 +11,7 @@
     <title>Search</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{% static 'assets/css/icons.css' %}">
+   
     <link rel="stylesheet" href="{% static 'assets/css/uikit.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/tailwind.css' %}">
@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body style="background-color: #f8f9fa !important;">
+<body style="background-image: url(/static/images/resources/settingbg.jpg);">
             <form action="search" method="POST">
             {% csrf_token %}
             <header style="margin-top: -23px;background-color: #212529;">
@@ -68,7 +68,7 @@
     
                             <!-- notivication header -->
                             <div class="px-4 py-3 -mx-5 -mt-4 mb-5 border-b">
-                                <h4>Upload Pics or Videos</h4>
+                                <h4>Upload Pics </h4>
                             </div>
     
                             <!-- notification contents -->
@@ -300,10 +300,10 @@
                         <!-- <p class="search-results-count">About 94 700 000 (0.39 sec.) results</p> -->
                         
                         {% for users in username_profile_list %}
-                        <section class="search-result-item">
+                        <section class="search-result-item" style="box-shadow:5px 10px grey;">
                             <a class="image-link" href="/profile/{{users.user}}"><img class="image" src="{{users.profileimg.url}}" style="height: 150px;width: 150px;">
                             </a>
-                            <div class="search-result-item-body">
+                            <div class="search-result-item-body" >
                                 <div class="row">
                                     <div class="col-sm-9">
                                         <h4 class="search-result-item-heading"><a href="/profile/{{users.user}}"><b>@{{users.user}}</b></a></h4>

@@ -1,3 +1,7 @@
+document.querySelector( "#retrobg-sun" ).onclick = () => {
+    document.querySelector( "#retrobg" ).classList.toggle( "retrobg-shutdown" );
+  };
+
 /* ----------------- Start Document ----------------- */
 (function($){
     "use strict";

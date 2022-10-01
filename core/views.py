@@ -1,5 +1,4 @@
 from ast import Delete
-import email
 from email.mime import image
 from django.shortcuts import render, redirect
 from django. contrib import messages
@@ -86,6 +85,7 @@ def upload(request):
 def search(request):
     user_object = User.objects.get(username=request.user.username)
     user_profile = Profile.objects.get(user=user_object)
+
     if request.method == 'POST':
         username = request.POST['username']
         username_object = User.objects.filter(username__icontains=username)
@@ -186,29 +186,20 @@ def settings(request):
     if request.method == 'POST':
 
         if request.FILES.get('image') == None:
-
             image = user_profile.profileimg
-            first = request.POST['first']
-            last = request.POST['last']
-            email = request.POST['email']
             bio = request.POST['bio']
             location = request.POST['location']
 
             user_profile.profileimg = image
-            user_profile.first = first
-            user_profile.last = last
-            user_profile.email = email
             user_profile.bio = bio
             user_profile.location = location
             user_profile.save()
         if request.FILES.get('image') != None:
             image = request.FILES.get('image')
-            email = request.POST['email']
             bio = request.POST['bio']
             location = request.POST['location']
 
             user_profile.profileimg = image
-            user_profile.email = email
             user_profile.bio = bio
             user_profile.location = location
             user_profile.save()

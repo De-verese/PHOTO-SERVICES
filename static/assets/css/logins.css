@@ -1,6 +1,6 @@
 
 body{
-    background: url("/static/assets/images/background/Desktop\ -\ 1\ 1.png") no-repeat center center/cover  ;
+    background: url("/static/assets/images/background/d.png") no-repeat center center/cover  ;
     height: 100vh;
     
 }
@@ -11,7 +11,7 @@ body{
     background:#FFAC41;
 }
 #form{
-    background-color: #323232;
+    background-color: #323232; 
     width:25%;
     border-radius: 10px;
     

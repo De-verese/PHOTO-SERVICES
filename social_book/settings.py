@@ -24,14 +24,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-5$7l+6unbpb$sc%uh0&foo5w2=&s@$jwrx86d@j_2f%urnyo%z'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 EMAIL_HOST = 'smtp.mailtrap.io'
 EMAIL_HOST_USER = '8d9a187ad835ab'
 EMAIL_HOST_PASSWORD = '36fff05ae9bdb5'
 EMAIL_PORT = '2525'
 
-ALLOWED_HOSTS = ['127.0.0.1','https://photosocialjuststellar.herokuapp.com/']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'core',
-
+    
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -56,26 +56,25 @@ SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-
+    
 ]
 
 ROOT_URLCONF = 'social_book.urls'
 
 AUTHENTICATION_BACKENDS = [
-
+    
     # Needed to login by username in Django admin, regardless of `allauth`
     'django.contrib.auth.backends.ModelBackend',
 
     # `allauth` specific authentication methods, such as login by e-mail
     'allauth.account.auth_backends.AuthenticationBackend',
-
+    
 ]
 
 TEMPLATES = [
@@ -89,7 +88,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-
+                
             ],
         },
     },
@@ -154,3 +153,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Configure Django App for Heroku.
+import django_on_heroku
+django_on_heroku.settings(locals())
