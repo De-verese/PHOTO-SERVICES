@@ -31,7 +31,7 @@ EMAIL_HOST_USER = '8d9a187ad835ab'
 EMAIL_HOST_PASSWORD = '36fff05ae9bdb5'
 EMAIL_PORT = '2525'
 
-ALLOWED_HOSTS = ['127.0.0.1','']
+ALLOWED_HOSTS = ['127.0.0.1','https://photosocialjuststellar.herokuapp.com/']
 
 
 # Application definition
